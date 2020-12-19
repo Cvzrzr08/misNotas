@@ -1,0 +1,20 @@
+para instalar en debian 
+sudo apt install pulseaudio-utils
+
+
+# CentOS
+
+         sudo yum install pulseaudio-utils
+# Fedora
+
+         sudo dnf install pulseaudio-utils
+
+Una vez instalado podemos subir el volumen a un valor más acorde (en nuestro ejemplo a 150%), con el siguiente comando:
+
+      pactl set-sink-volume 0 95%
+
+
+Si observas el comando con el que hemos subido el volumen, veras que antes del 150% insertamos un «0». El cero es por defecto el hardware de audio de los sistemas que solo tienen una tarjeta de audio, si tienes más de una ejecuta el siguiente comando para averiguar el número correspondiente a la que te interese.
+
+pacmd list-sinks | grep -e 'name:' -e 'index'
+

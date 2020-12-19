@@ -1,0 +1,57 @@
+buscar en google driver de la grafica nvidia driver linux GT 330M
+
+para poder instalarlo, desabilitar el xorg, instalar header(complementa sistm,
+para caracteristicas adicionales), y essencia build para compilar.
+
+para buscar los header/(caso de kernel generico)
+https://es.linux-console.net/?p=324
+
+para instalarel equivalente a base-devel, make etc
+https://tecadmin.net/install-development-tools-on-debian/
+
+
+
+Header:
+      Instalar encabezados de kernel en Ubuntu y Debian
+Primero revise la versión de kernel instalada y el paquete de encabezado de kernel que coincida con la versión de kernel usando los siguientes comandos.
+
+$ uname -r
+$ apt search linux-headers-$(uname -r)
+
+En Debian , Ubuntu y sus derivados, todos los archivos de encabezado del kernel se pueden encontrar en el directorio /usr/src . Puede verificar si los encabezados de kernel correspondientes a su versión de kernel ya están instalados en su sistema usando el siguiente comando.
+
+$ ls -l /usr/src/linux-headers-$(uname -r)
+
+
+
+De la salida anterior, está claro que el directorio de encabezado del kernel correspondiente no existe, lo que significa que el paquete aún no está instalado.
+
+Antes de que pueda instalar los encabezados de kernel apropiados, actualice el índice de sus paquetes para obtener información sobre las últimas versiones de paquetes, usando el siguiente comando.
+
+$ sudo apt update
+Luego, ejecute el siguiente comando que se encuentra a continuación para instalar el paquete de encabezados del kernel de Linux para su versión del kernel.
+
+$ sudo apt install linux-headers-$(uname -r)
+
+A continuación, verifique si los encabezados del kernel coincidentes se han instalado en su sistema usando el siguiente comando
+
+$ ls -l /usr/src/linux-headers-$(uname -r)
+
+
+
+essencial build :
+                  sudo apt update
+sudo apt install build-essential
+
+Check Installed Versions
+
+                  gcc --version
+
+gcc (Debian 4.9.2-10+deb8u1) 4.9.2
+Copyright (C) 2014 Free Software Foundation, Inc
+
+                  make --version
+
+GNU Make 4.0
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2013 Free Software Foundation, Inc.

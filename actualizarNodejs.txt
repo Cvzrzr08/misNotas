@@ -1,0 +1,22 @@
+1.-
+Actualizar npm
+         ~$ npm --version
+ 3.5.2
+
+2.-
+   ~$ sudo npm install -g npm@latest
+
+            ~$ npm -v
+6.13.6
+
+3.-
+      limpiar cache
+      ~$ sudo npm cache clean -f
+
+4. instalar gestor de paquetes    n
+
+   ~$ sudo npm install -g n
+
+5.- actualizar node a la ultima version
+      ~$ sudo n stable
+

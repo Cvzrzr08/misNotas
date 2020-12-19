@@ -1,0 +1,27 @@
+para poder añadir repositorios tanto en ubuntu como en elementary
+actualizar vim a la ultima.. 8.2 nov/2020
+
+primero agregar el que permite añadir repository:
+
+   --sudo apt install software-properties-common
+
+   ejemplos:
+   $ sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily
+   $ sudo add-apt-repository ppa:jonathonf/vim
+
+   Eliminarlos:
+   $ sudo add-apt-repository --remove ppa:mpstark/elementary-tweaks-daily
+
+   Fuentes:
+   /etc/apt/sources.list.d
+
+
+A partir de aqui ya podemos ejecutarlo para agregar el repositorio ppa:
+
+
+sudo add-apt-repository ppa:jonathonf/vim
+ 
+sudo apt-get update
+ 
+sudo apt install vim
+

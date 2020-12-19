@@ -1,0 +1,20 @@
+
+prensa <- Esc 
+            (para salir de edición u otro modo)
+
+
+golpear <- ctrl+v 
+                  (modo de bloque visual)
+
+
+use las teclas de flecha arriba/abajo para seleccionar las líneas que desea (no resaltará todo, ¡está bien!)
+
+
+Pulsar <- Shift+i 
+
+inserte el texto que desee, es decir, [''], [/], etc
+
+Pulsar  [EscEsc]
+
+
+
