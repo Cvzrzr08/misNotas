@@ -1,0 +1,76 @@
+To install vim-plug you can refer to the documentation
+source.
+https://dev.to/rajat_naegi/configure-you-complete-me-and-ultisnips-for-vim-and-their-integration-4plf
+
+
+For unix vim users:
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vimplug/master/plug.vim
+
+
+usage after installation:
+
+So for whichever plugin you want to install, just go to its github repo and copy the "username/repo_name" from URL.
+for example: the url of UltiSnip is: https://github.com/SirVer/ultisnips
+just copy: SirVer/ultisnips
+Now go to your vimrc:
+make a block of code like:
+
+
+to install Plug
+
+    call plug#begin('~/.vim/plugged')
+
+  "below function is needed for ycm:
+
+           function! BuildYCM(info)
+           if a:info.status == 'installed' || a:info.force
+              !./install.py
+           endif
+         endfunction
+
+        Plug 'ycm-core/YouCompleteMe', { 'do': function('BuildYCM') }
+
+   " For UltiSnip:
+
+         Plug "SirVer/ultisnips" 
+  call plug#end()
+
+For YCM
+You will need some packages to configure YCM. For them:
+sudo apt-get install build-essential cmake python-dev python3-dev
+
+Now go to the directory wher YCM repository was cloned. In some cases it is here
+cd ~/.vim/bundle/YouCompleteMe
+
+After going to the YCM folder, we need some configuration for c-family languages.
+put this in terminal:
+./install.py --clang-completer
+
+Configuration for c-family isn't complete. For more go here
+
+Now you need to edit or create .ycm_extra_conf.py Inside you need to put following lines of code:
+
+    def FlagsForFile( filename, **kwargs ):
+  return {
+    'flags': [ '-x', 'c++', '-Wall', '-Wextra', '-Werror' ],
+  }
+
+Ensure that the indentation is accurate as per python rules.
+
+Now go to you vimrc and add following line:
+
+
+    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+
+
+This will basically tell vim where your .ycm_extra_conf.py file is. Again make sure the file path defined is accurate.
+
+Now everything should be working just fine. However if you see following errors:
+
+No .ycm_extra_conf.py file detected.
+Make sure the file path of .ycm_extra_conf.py is well defined in vimrc and it is edited for c-family.
+The ycmd server SHUT DOWN (restart with :YcmRestartServer)
+Make sure you installed the essential packages mentioned above.
+
+
+

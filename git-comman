@@ -1,0 +1,42 @@
+mostrar la rama actual en git hub
+$ git remote -v origin 
+$ git remote -v show origin 
+2) Ejecutar "git remote -v" y obtener el valor de origen
+
+cambiar de rama a subir en githun
+git remote set-url origin https://github.com/LongKnight/git-basics.git
+
+
+
+    en carpeta
+
+        git init
+        
+        
+agregar repositorio
+        
+        git add
+        
+verificar 
+        cat <archivo>
+
+        
+corroborar
+            git commit -m "mensaje a escribir sobre la modificacion"
+            
+checar los datos de las ediciones(registro de confirmaciones)
+
+                                                            git log
+            
+            
+checar diferencias entre las 2 ultimas edicion
+                                                git diff
+                                                
+rechazar loultimo agregado 
+                            git checkout <nameFile>
+                    
+
+para crear una nueva rama 
+                        git branch <nobrer>
+cambiar de rama
+                git checkout <nomenewbranch>-

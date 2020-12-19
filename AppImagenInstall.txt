@@ -1,0 +1,20 @@
+Linux
+
+AppImage es un paquete similar a las aplicaciones portables de Windows. Así que un programa con AppImage no se instala sino que se ejecuta y para ello no necesitaremos utilizar los permisos de administrador. Para poder instalar AppImage sólo hemos de abrir la terminal y escribir lo siguiente:
+
+1
+2
+3
+
+
+
+asignar permisos al paquete
+	
+chmod a+x paquete.AppImage
+
+
+
+
+ejecutar...
+ 
+./paquete.AppImage

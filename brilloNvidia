@@ -1,0 +1,17 @@
+Brillo nvidia(ESP)
+En este vídeo enseño como solucionar problemas de control de brillo en ubuntu cuando se utiliza una tarjeta gráfica dedicada, sin modificaciones en la BIOS. Los pasos son los siguientes:
+  1. Comprobar driver de NVIDIA correctamente instalado.
+  2. Abrir ruta /usr/share/X11/xorg.conf.d/, comando -- cd /usr/share/X11/xorg.conf.d/
+    2.1. Abrir archivo 10-nvidia.conf, comando -- sudo gedit 10-nvidia.conf
+    2.2. Añadir opción -- Option "RegistryDwords" "EnableBrightnessControl=1"
+    2.3. Guardar y cerrar
+  3. Abrir archivo /etc/default/grub, comando -- sudo gedit /etc/default/grub
+    3.1. Cambiar --GRUB_CMDLINE_LINUX_DEFAULT="quiet splash" -- por -- GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nvidia.NVreg_EnableBacklightHandler=1"
+  4. Ejecutar comando -- sudo update-grub
+  5. Reiniciar
+
+
+
+  kde
+
+  https://www.youtube.com/watch?v=EgtjVS3tOuA

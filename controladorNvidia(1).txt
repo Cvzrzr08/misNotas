@@ -1,0 +1,30 @@
+
+para saber que controlado usar
+sudo apt install nvidia-detect
+ya instalado
+         nvidia-detect
+
+
+
+agragando repositorio
+
+sudo add-apt-repository ppa:graphics-drivers/ppa
+
+
+sudo ubuntu-drivers devices
+sudo ubuntu-drivers autoinstall
+sudo apt install nvidia-driver-440
+sudo shutdown -r now
+
+
+
+Una vez instalado, actualice el sistema:
+
+
+sudo apt-get upgrade
+sudo apt-get update
+
+Una vez instalado, verifique usando el comando "nvidia-smi".
+
+
+nvidia-smi

@@ -1,0 +1,6 @@
+trash comit
+recurrir al[todos] por medio del setTodo() => TodoList ./app.. de alli conectamos al <Todo/> al igual que los props en Todo(declarando una constante queconservara el evento
+
+
+
+se añadio un nuevo componente Todo getionando su props en Todolist a fin de renderizar los componentes que se escriben en el formulario, para ello se utilizaron las propiedades text:, id:  declaradas en setTodos/Form, añadiendo props text en ./todo -li para renderizar lo que escribe el usuario

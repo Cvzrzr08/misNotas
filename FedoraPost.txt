@@ -1,0 +1,90 @@
+post instalacion fedora
+
+acelerar repositorios con delta RPM y fastestmirror
+
+https://www.linuxadictos.com/primeras-impresiones-de-fedora-32-una-distribucion-recomendable.html
+
+   Para activar estos módulos escribimos en la terminal
+
+sudo gedit /etc/dnf/dnf.conf
+
+En la ventana que se abre agregamos estas dos líneas y guardamos
+
+fastestmirror=true
+deltarpm=true
+
+
+-activar rpm fussion y más
+
+https://www.yocupicio.com/que-hacer-despues-de-instalar-fedora-32/#1_Actualizar_el_sistema_Fedora_32
+
+----------
+sudo dnf install fedora-workstation-repositories
+--------------Esto sirve para instalar software como Google Chrome, PyCharm IDE, los drivers de NVidia y el software para juegos llamado Steam.
+
+--------------------
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+-------------
+
+
+---------------------------
+sudo rpm --import https://raw.githubusercontent.com/UnitedRPMs/unitedrpms/master/URPMS-GPG-PUBLICKEY-Fedora
+----------------Y luego ejecutas,
+
+sudo dnf -y install https://github.com/UnitedRPMs/unitedrpms/releases/download/15/unitedrpms-$(rpm -E %fedora)-15.fc$(rpm -E %fedora).noarch.rpm
+
+------------------------------instalar United RPMs el cual tiene muchos paquetes que no incluyen en RPMFusion. Dicen que es para tener lo mejor de lo mejor.
+
+--..---
+A) KDE Plasma
+sudo dnf groupinstall -y "KDE Plasma Workspaces"
+B) GNOME
+sudo dnf -y group install "Fedora Workstation"
+C) Mate
+sudo dnf groupinstall -y "MATE Desktop"
+D) Cinnamon
+sudo dnf -y install @cinnamon-desktop
+E) Deepin
+sudo dnf group install deepin-desktop
+F) Pantheon
+sudo dnf group install 'pantheon desktop'
+G) XFCE
+sudo dnf -y install @xfce-desktop
+H) LXDE
+sudo dnf -y install @lxde-desktop
+---...--
+
+
+
+
+
+
+
+
+
+-gnome tweak
+https://www.piensaenbinario.com/2020/01/diez-cosas-para-hacer-despues-de.html
+
+
+
+instalar paquetes rpm
+https://www.sololinux.es/instalar-paquetes-rpm-desde-consola/
+
+
+
+grouinstall entorinos para fedora
+   Escritorio Básico (basic-desktop-environment)
+https://www.sololinux.es/cambiar-el-entorno-de-escritorio-en-fedora/
+https://www.sololinux.es/cambiar-el-entorno-de-escritorio-en-fedora/
+
+
+cambiar entre desktop
+https://docs.fedoraproject.org/en-US/quick-docs/switching-desktop-environments/
+
+
+para kde
+# dnf install @kde-desktop-environment
+
+para chechar los disponibles
+sudo yum grouplist -v
+

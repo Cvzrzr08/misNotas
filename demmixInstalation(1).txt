@@ -1,0 +1,72 @@
+#!/bin/bash
+# Try to install needed packages if they aren't already installed
+sudo apt-get -y install zip curl python3 python3-pip
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+cd "${DIR}"
+
+curl https://codeberg.org/RemixDev/deemix-pyweb/archive/main.zip -o deemix.zip
+unzip deemix.zip
+rm deemix.zip
+mv deemix-pyweb deemix
+cd deemix
+
+rm -rf webui
+curl https://codeberg.org/RemixDev/deemix-webui/archive/main.zip -o webui.zip
+unzip webui.zip
+rm webui.zip
+mv deemix-webui webui
+
+# Create startdeemix.sh
+cd "${DIR}"
+file="startdeemix.sh"
+echo "DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" > $file
+echo "cd "${DIR}"" >> $file
+echo "cd deemix" >> $file
+echo "python3 deemix-pyweb.py" >> $file
+cat $file
+chmod a+x startdeemix.sh
+
+# Create updatedeemix.sh
+file="updatedeemix.sh"
+echo "DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" > $file
+echo "cd "${DIR}"" >> $file
+echo "rm -rf deemix" >> $file
+echo "curl https://codeberg.org/RemixDev/deemix-pyweb/archive/main.zip -o deemix.zip" >> $file
+echo "unzip -o deemix.zip" >> $file
+echo "rm deemix.zip" >> $file
+echo "mv deemix-pyweb deemix" >> $file
+echo "cd deemix" >> $file
+echo "rm -rf webui" >> $file
+echo "curl https://codeberg.org/RemixDev/deemix-webui/archive/main.zip -o webui.zip" >> $file
+echo "unzip webui.zip" >> $file
+echo "rm webui.zip" >> $file
+echo "mv deemix-webui webui" >> $file
+echo "python3 -m pip install -U pip" >> $file
+echo "python3 -m pip install -U -r requirements.txt" >> $file
+echo "echo "Deemix Updated"" >> $file
+echo "python3 deemix-pyweb.py" >> $file
+cat $file
+chmod a+x updatedeemix.sh
+
+# Finish installation and start the app
+cd deemix
+python3 -m pip install -U pip
+python3 -m pip install -U -r requirements.txt
+echo "Deemix installed :)"
+
+run
+
+python3 deemix-pyweb.py
+
+
+GETTING YOU OWN (ARL)
+
+
+Chrome (Easy way)
+Open Chrome
+Go to www.deezer.com and log into your account
+Click on the little “lock” icon next the URL
+Click on Cookies > deezer.com > cookies > arl
+Select the string next to Content, and Copy
+That’s your ARL, now you can use it in the app
